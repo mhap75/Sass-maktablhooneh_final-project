@@ -1,0 +1,24 @@
+@function set-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return black;
+    }
+
+    @else {
+        @return white;
+    }
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin transition($property, $duration, $function) {
+    -webkit-transition: $property $duration $function;
+    -moz-transition: $property $duration $function;
+    -o-transition: $property $duration $function;
+    transition: $property $duration $function;
+}

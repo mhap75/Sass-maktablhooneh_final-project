@@ -1,0 +1,233 @@
+@import url('https://v1.fontapi.ir/css/IranNastaliq');
+@import 'functions';
+@import 'variables';
+@import 'utilities';
+
+// body {
+//     background-color: $dark-clr;
+//     color: set-text-color($dark-clr);
+// }
+
+// button {
+//     &:hover {
+//         @include transform(rotate(-20deg));
+//     }
+// }
+
+//Reset CSS
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-family-nastalight;
+    line-height: 2;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-color;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+#main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+
+    ul {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    li {
+        padding-block: 0.5rem;
+        border-bottom: 3px solid transparent;
+        @include transition(border-color, 0.5s, ease);
+
+        &.active {
+            border-color: $primary-color;
+        }
+
+        &:hover {
+            border-color: $medium-color;
+        }
+
+
+    }
+
+    a {
+        color: $light-color;
+    }
+}
+
+#header {
+    &-home {
+        background: radial-gradient(rgba(36, 134, 109, 0.815), rgba(20, 20, 20, 0.5)), $bg-image no-repeat center center / cover;
+        height: 100vh;
+        color: $light-color;
+
+        .header-content {
+            text-align: center;
+            padding-top: 10%;
+
+            h1 {
+                line-height: 2;
+                background: -webkit-linear-gradient(0deg, #f8d00a, #8c1da7 70%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 0.01px rgba(47, 0, 255, 0.44);
+            }
+        }
+    }
+}
+
+#home {
+    &-1 {
+        .items {
+            display: grid;
+            margin-top: 3rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+
+            .fas {
+                color: $primary-color;
+                padding-bottom: 2rem;
+            }
+        }
+    }
+
+    &-2 {
+        .items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            li {
+                line-height: 2;
+
+                &.items-title {
+                    font-size: 1.5rem;
+                }
+
+                &.items-number {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+
+            div {
+                padding: 3rem 0;
+
+                &:nth-child(odd) {
+                    background: $primary-color;
+                    color: $light-color;
+                }
+
+                &:nth-child(even) {
+                    background: $light-color;
+                }
+            }
+        }
+    }
+
+    &-3 {
+        .process {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+
+            &-step {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 2rem;
+                background-color: $primary-color;
+                color: set-text-color($primary-color);
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                line-height: 35px; //* important for the content to be place in the middle of the element
+                padding: 0.2rem;
+                @include transition(all, 0.5s, ease);
+            }
+
+            &-icon {
+                position: relative;
+                border-radius: 50%;
+                background-color: $dark-color;
+                color: set-text-color($dark-color);
+                width: 110px;
+                height: 110px;
+                line-height: 110px; //* same as above
+                padding: 1rem;
+                @include transition(all, 1s, ease);
+
+                &:hover {
+                    background-color: $primary-color;
+                    transform: scale(1.1);
+
+                    .process-step {
+                        background-color: $dark-color;
+                        color: set-text-color($dark-color);
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+#main {
+    &-footer {
+        background-color: $dark-color;
+        color: set-text-color($dark-color);
+        height: 7rem;
+        margin-top: 2rem;
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            .social {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+
+                >* {
+                    border: 1.5px solid $light-color;
+                    padding: 0.5rem;
+                    border-radius: 0.8rem;
+                    cursor: pointer;
+                }
+
+                >*:hover {
+                    color: $primary-color;
+                    background-color: $light-color;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+#home-1,
+#home-3 {
+    p {
+        margin-top: 1.5rem;
+    }
+}
+
+@import 'media';
